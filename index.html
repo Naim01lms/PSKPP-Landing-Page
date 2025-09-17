@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PSKPP | Sukan & Kebudayaan Perkhidmatan Pendidikan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        /* Default Theme Colors in HSL format for Tailwind CSS compatibility */
+        /* Primary: #1F2937 */
+        --color-primary: 215 28% 17%;
+        /* Secondary: #FBBF24 */
+        --color-secondary: 45 96% 56%;
+        
+        /* Default Font Families */
+        --font-family-heading: 'Teko', sans-serif;
+        --font-family-body: 'Inter', sans-serif;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      /* Offset for the fixed header (h-20 = 5rem). 
+         This doesn't apply to #home, which should be at the very top. */
+      section[id]:not(#home) {
+        scroll-margin-top: 5rem; 
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary': 'hsl(var(--color-primary) / <alpha-value>)',
+              'secondary': 'hsl(var(--color-secondary) / <alpha-value>)',
+              'accent': '#10B981', // Emerald Green
+              'light': '#F3F4F6', // Light Gray
+              'dark': '#1F2937', // Dark Gray
+            },
+            fontFamily: {
+              sans: ['var(--font-family-body)', 'sans-serif'],
+              heading: ['var(--font-family-heading)', 'sans-serif'],
+            },
+            animation: {
+              shake: 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both',
+            },
+            keyframes: {
+              shake: {
+                '10%, 90%': { transform: 'translate3d(-1px, 0, 0)' },
+                '20%, 80%': { transform: 'translate3d(2px, 0, 0)' },
+                '30%, 50%, 70%': { transform: 'translate3d(-4px, 0, 0)' },
+                '40%, 60%': { transform: 'translate3d(4px, 0, 0)' },
+              },
+            },
+          },
+        },
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Teko:wght@400;500;600;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
